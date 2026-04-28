@@ -36,59 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ----- FAVORITES CAROUSEL -----
-    const track = document.getElementById('carouselTrack');
-    const slides = track.querySelectorAll('.carousel-slide');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const dotsContainer = document.getElementById('carouselDots');
-    
-    let currentIndex = 0;
-    const totalSlides = slides.length;
-
-    // Create dots
-    slides.forEach(function(_, index) {
-        const dot = document.createElement('button');
-        dot.classList.add('dot');
-        if (index === 0) dot.classList.add('active');
-        dot.setAttribute('aria-label', 'Go to slide ' + (index + 1));
-        dot.addEventListener('click', function() {
-            goToSlide(index);
-        });
-        dotsContainer.appendChild(dot);
-    });
-
-    const dots = dotsContainer.querySelectorAll('.dot');
-
-    function updateSlides() {
-        slides.forEach(function(slide, index) {
-            slide.classList.remove('active');
-            dots[index].classList.remove('active');
-        });
-        slides[currentIndex].classList.add('active');
-        dots[currentIndex].classList.add('active');
-    }
-
-    function goToSlide(index) {
-        currentIndex = index;
-        updateSlides();
-    }
-
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % totalSlides;
-        updateSlides();
-    }
-
-    function prevSlide() {
-        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-        updateSlides();
-    }
-
-    prevBtn.addEventListener('click', prevSlide);
-    nextBtn.addEventListener('click', nextSlide);
-
-    // Auto-play every 5 seconds
-    setInterval(nextSlide, 5000);
 
     // ----- SIMPLE SCROLL ANIMATION -----
     // Add a simple class when sections come into view
