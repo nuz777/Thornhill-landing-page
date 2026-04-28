@@ -1,0 +1,82 @@
+/* =========================================
+   HEADER & NAVIGATION
+   ========================================= */
+.main-header {
+    background-color: rgba(21, 2, 2, 0.92);
+    backdrop-filter: blur(8px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo h1 {
+    font-family: var(--font-title);
+    font-size: 2rem;
+    letter-spacing: 4px;
+    color: var(--color-accent);
+}
+
+/* Navigation menu */
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.main-nav a {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    color: var(--color-text-muted);
+    position: relative;
+}
+
+.main-nav a:hover {
+    color: var(--color-accent);
+}
+
+/* Simple underline hover effect */
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color-accent);
+    transition: var(--transition);
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+/* Hamburger menu button (mobile only) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: var(--color-text);
+    transition: var(--transition);
+}

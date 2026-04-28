@@ -1,0 +1,96 @@
+/* =========================================
+   EVENTS SECTION
+   ========================================= */
+.events {
+    padding: 80px 0;
+    background-color: var(--color-bg-light);
+}
+
+.events-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.event-card {
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    padding: 25px;
+    transition: var(--transition);
+    border-radius: 20px;
+}
+
+.event-card:hover {
+    border-color: #333;
+    transform: translateY(-4px);
+}
+
+.event-date {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--color-accent);
+    border: 1px solid rgba(236, 10, 10, 0.3);
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.event-card h3 {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.event-card p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+}
+
+/* Table styles (extra points) */
+.table-title {
+    font-family: var(--font-title);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.events-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+}
+
+.events-table thead {
+    background-color: var(--color-border);
+}
+
+.events-table th,
+.events-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.events-table th {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: var(--color-accent-soft);
+}
+
+.events-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
