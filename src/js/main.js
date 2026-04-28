@@ -36,33 +36,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-
-    // ----- SIMPLE SCROLL ANIMATION -----
-    // Add a simple class when sections come into view
-    const sections = document.querySelectorAll('section');
-    
-    function checkScroll() {
-        const triggerBottom = window.innerHeight * 0.85;
-        
-        sections.forEach(function(section) {
-            const sectionTop = section.getBoundingClientRect().top;
-            if (sectionTop < triggerBottom) {
-                section.style.opacity = '1';
-                section.style.transform = 'translateY(0)';
-            }
-        });
-    }
-
-    // Initialize sections with slight hidden state for animation
-    sections.forEach(function(section) {
-        if (!section.classList.contains('hero')) {
-            section.style.opacity = '0.9';
-            section.style.transform = 'translateY(10px)';
-            section.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-        }
-    });
-
-    window.addEventListener('scroll', checkScroll);
-    checkScroll(); // Run once on load
-
 });
